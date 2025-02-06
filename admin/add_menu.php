@@ -1,5 +1,12 @@
 <?php
-include 'db.php'; // Include the database connection
+session_start(); 
+include 'db.php'; // Include your database connection
+
+// Check if the admin is logged in
+if (!isset($_SESSION['admin_id'])) {
+    header('Location: login.php'); // Redirect to login page if not logged in
+    exit;
+}
 
 // Fetch food categories for the select dropdown
 $sql = "SELECT * FROM food_categories";
@@ -95,7 +102,7 @@ if (isset($_POST['submit'])) {
                 <div class="forms">
                     <label for="category">Category:</label>
                     <select name="category_id" id="category" required>
-                        <option value="">Select Category</option>
+                        <option value="" selected hidden>Select Category</option>
                         <?php
                         // Output categories as options
                         if (mysqli_num_rows($result) > 0) {

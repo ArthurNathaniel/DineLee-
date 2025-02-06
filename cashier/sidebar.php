@@ -3,21 +3,13 @@
 
     </div>
     <div class="links">
-        <h4>FOOD</h4>
-
-        <a href="dashboard.php"> Dashboard </a>
+        <h4>SALES</h4>
+        <a href="dashboard.php">Dashboard</a>
         <div class="dashed"></div>
-        <a href="add_category.php">Add Category</a>
+        <a href="order_food.php">Order Food</a>
         <div class="dashed"></div>
-        <a href="view_categories.php">View Categories</a>
+        <a href="view_orders.php">View Orders</a>
         <div class="dashed"></div>
-        <a href="add_menu.php">Add Menu</a>
-        <div class="dashed"></div>
-        <a href="view_menu.php">View Menu</a>
-        <h4>CASHIER</h4>
-        <a href="register_cashier.php">Register Cashier</a>
-        <div class="dashed"></div>
-        <a href="view_cashiers.php">View Cashiers</a>
     </div>
 
     <a href="logout.php">

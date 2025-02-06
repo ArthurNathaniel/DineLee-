@@ -1,5 +1,12 @@
 <?php
-include 'db.php'; // Include the database connection
+session_start(); 
+include 'db.php'; // Include your database connection
+
+// Check if the admin is logged in
+if (!isset($_SESSION['admin_id'])) {
+    header('Location: login.php'); // Redirect to login page if not logged in
+    exit;
+}
 
 // Fetch all food categories from the database
 $sql = "SELECT * FROM food_categories";
