@@ -1,0 +1,42 @@
+.auth_all{
+    padding: 0 30%;
+    /* height: 100vh; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.auth_alls{
+  padding: 0 5%;
+  /* height: 100vh; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+
+.auth_box{
+    width: 100%;
+    padding: 0 5%;
+    padding-block: 50px;
+    background-color: #fff;
+    margin-block: 50px;
+}
+
+.auth_box .logo{
+    margin: 0 auto;
+}
+.title{
+  text-align: center;
+  margin-top: 20px;
+}
+
+@media only screen and (max-width: 1110px) {
+  .auth_all{
+    padding: 0 5%;
+  }
+   }
