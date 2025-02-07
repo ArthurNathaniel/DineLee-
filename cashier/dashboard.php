@@ -10,9 +10,9 @@ if (!isset($_SESSION['cashier_id'])) {
 
 $cashier_name = $_SESSION['cashier_name'];
 
-// Get current date and time
-date_default_timezone_set('GMT');  // Changed to GMT
-$current_hour = date('H');
+  // Get current date and time
+  date_default_timezone_set('Africa/Accra');
+  $current_hour = date('H');
 $current_date = date('l, F j, Y');
 $current_time = date('h:i A');
 

@@ -9,7 +9,12 @@ if (!isset($_SESSION['cashier_id'])) {
 }
 
 $cashier_name = $_SESSION['cashier_name'];
-$current_date = date('l, F j, Y');
+date_default_timezone_set('Africa/Accra');
+$current_date = date("l, d F Y H:i:s"); // Format: Thursday, 06 February 2025 14:30:45
+
+// $current_date = date('l, F j, Y');
+// $current_date = date('l, F j, Y'); // Date without time
+// $current_date = date("l, d F Y"); // Format the date as "Thursday, 06 February 2025"
 
 // Set number of items per page
 $items_per_page = 5;
@@ -94,7 +99,8 @@ if (isset($_POST['submit_order'])) {
         // Get the cashier ID and other details from session
         $cashier_id = $_SESSION['cashier_id'];
         $cashier_name = $_SESSION['cashier_name'];
-        $order_date = date('Y-m-d H:i:s');  // Current timestamp
+        $order_date = date('Y-m-d h:i:s A');  // Correct 12-hour format with AM/PM
+
         $total_amount = $total;  // The total amount calculated earlier
         $payment_mode = $_POST['payment_mode'];  // Payment method selected
 
@@ -204,12 +210,19 @@ if (isset($_POST['submit_order'])) {
                     <input type="text" id="cashier_name" name="cashier_name" value="<?= $cashier_name ?>" readonly>
                 </div>
 
-                <div class="forms">
+                <!-- <div class="forms">
                     <label for="current_date">Date: </label>
                     <input type="text" id="current_date" name="current_date" value="<?= $current_date ?>" readonly>
-                </div>
-
-               
+                </div> -->
+                <!-- <div class="forms">
+    <label for="current_date">Date: </label>
+    <input type="text" id="current_date" name="current_date" value="<?= $current_date ?>" readonly>
+</div> -->
+<div class="forms">
+    <label for="current_date">Date & Time: </label>
+    <input type="text" id="current_date" name="current_date" value="<?= $current_date ?>" readonly>
+</div>
+        
 
                 <!-- Search Input -->
                 <div class="forms">
@@ -323,6 +336,23 @@ if (isset($_POST['submit_order'])) {
 
         </div>
     </div>
+
+    <!-- <script>
+flatpickr("#current_date", {
+    dateFormat: "l, d F Y",  // Format the date as "Thursday, 06 February 2025"
+    defaultDate: "today",    // Default to today's date
+    minDate: "today",        // Disable past dates
+    maxDate: "today",        // Disable future dates
+    locale: {
+        firstDayOfWeek: 1 // Optionally set the first day of the week (1 = Monday)
+    },
+    mobile: {
+        enabled: true // Enable mobile mode for better display on small screens
+    }
+});
+
+
+</script> -->
 </body>
 
 </html>

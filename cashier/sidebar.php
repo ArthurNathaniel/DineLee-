@@ -3,13 +3,18 @@
 
     </div>
     <div class="links">
-        <h4>SALES</h4>
+        <h4>CASHIER</h4>
         <a href="dashboard.php">Dashboard</a>
         <div class="dashed"></div>
+        <a href="chart.php">Chart</a>
+        <h4>ORDERS</h4>
+    
+   
         <a href="order_food.php">Order Food</a>
         <div class="dashed"></div>
         <a href="view_orders.php">View Orders</a>
-        <div class="dashed"></div>
+    <h4>SALES</h4>
+    <a href="daily_sales.php">Daily Sales</a>
     </div>
 
     <a href="logout.php">

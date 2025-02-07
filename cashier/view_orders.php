@@ -2,9 +2,18 @@
 session_start();
 include 'db.php'; // Include database connection
 
-// Query to fetch order details
+// Query to fetch order details with both date and time of order_date
 $query = "
-    SELECT o.order_id, o.order_date, o.total_amount, o.payment_mode, o.cashier_name, oi.food_id, oi.quantity, oi.price, oi.total_price 
+    SELECT 
+        o.order_id, 
+        o.order_date,  -- Get full DATETIME
+        o.total_amount, 
+        o.payment_mode, 
+        o.cashier_name, 
+        oi.food_id, 
+        oi.quantity, 
+        oi.price, 
+        oi.total_price 
     FROM orders o
     JOIN order_items oi ON o.order_id = oi.order_id
     ORDER BY o.order_date DESC
@@ -50,7 +59,6 @@ while ($row = mysqli_fetch_assoc($result)) {
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/auth.css">
     <link rel="stylesheet" href="../css/order_food.css">
- 
 </head>
 
 <body>
@@ -66,7 +74,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                         <tr>
                             <th>Order ID</th>
                             <th>Cashier Name</th>
-                            <th>Order Date</th>
+                            <th>Order Date & Time</th>
                             <th>Food Items</th>
                             <th>Total Amount</th>
                             <th>Payment Mode</th>
@@ -78,7 +86,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                             <tr>
                                 <td><?php echo $order_id; ?></td>
                                 <td><?php echo $order['cashier_name']; ?></td>
-                                <td><?php echo date('Y-m-d H:i', strtotime($order['order_date'])); ?></td>
+                                <td><?php echo date('Y-m-d g:i A', strtotime($order['order_date'])); ?></td> <!-- Display date and time with AM/PM -->
                                 <td>
                                     <?php
                                     foreach ($order['items'] as $item) {
@@ -113,7 +121,6 @@ while ($row = mysqli_fetch_assoc($result)) {
             form.submit();
         }
     </script>
-
 </body>
 
 </html>
