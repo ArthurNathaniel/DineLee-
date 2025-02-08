@@ -1,0 +1,57 @@
+.index_all{
+    border: 1px dashed #ddd;
+    text-align: center;
+    padding-block: 20px;
+}
+.index_text{
+    width: 100%;
+  text-align: center;
+  color: #333;
+
+}
+.index_text h1{
+ text-align: center;
+    font-size: 80px;
+}
+
+.index_text strong{
+    color: #cc1827;
+}
+.index_text p{
+    padding: 0 30%;
+    margin-top: 10px;
+    color: #20202083;
+
+    text-align: center;
+}
+.index_btn{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    width: 100%;
+}
+.index_btn button{
+    padding: 15px 45px;
+    background-color: #cc1827;
+    color: #ddd;
+    border: none;
+    border-radius: 10px;
+    font-weight: 900;
+}
+
+.white{
+    background-color: #fff !important;
+    color: #333 !important;
+  
+}
+
+.swiper_pos{
+    margin-top: 20px;
+}
+
+.swiper_pos img{
+    height: 500px;
+    width: 100%;
+    object-fit: contain;
+}

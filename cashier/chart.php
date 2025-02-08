@@ -1,6 +1,12 @@
 <?php
-// Include the database connection
-include('db.php');
+session_start();
+include 'db.php'; // Database connection
+
+// Check if cashier is logged in
+if (!isset($_SESSION['cashier_id'])) {
+    header("Location: login.php");
+    exit;
+}
 
 // Query to get the most ordered food items
 $food_query = "

@@ -70,14 +70,32 @@ $ghana_holidays = [
 
     // 🎉 **Other Important Days**
     "02-14" => "Happy Valentine's Day! Medɔ wo!",
+    "03-08" => "International Women's Day! Celebrating the strength of women!",
+    "04-22" => "Earth Day! Let’s protect our planet!",
     "06-16" => "International Day of the African Child!",
+    "09-05" => "International Charity Day – Give to those in need!",
     "10-15" => "Global Handwashing Day – Keep Ghana clean!",
     "11-19" => "International Men's Day – Wishing all men strength and wisdom!",
-    "12-03" => "International Day of Persons with Disabilities – Respect & Inclusion for all!"
+    "12-03" => "International Day of Persons with Disabilities – Respect & Inclusion for all!",
+    "12-10" => "Human Rights Day – Stand up for equality and justice!"
 ];
+
 
 $today = date('m-d');
 $holiday_message = isset($ghana_holidays[$today]) ? $ghana_holidays[$today] : "";
+// Fetch Motivational Quote from API
+$quote = "Stay positive, work hard, make it happen."; // Default quote
+
+$api_url = "https://zenquotes.io/api/today";
+$response = @file_get_contents($api_url);
+
+if ($response !== false) {
+    $quote_data = json_decode($response, true);
+    if (isset($quote_data[0]['q'])) {
+        $quote = $quote_data[0]['q'] . " - " . $quote_data[0]['a'];
+    }
+}
+
 
 ?>
 
@@ -90,6 +108,7 @@ $holiday_message = isset($ghana_holidays[$today]) ? $ghana_holidays[$today] : ""
     <?php include '../cdn.php'; ?>
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/auth.css">
+    
 </head>
 <body>
 <?php include 'sidebar.php'?>
@@ -97,6 +116,8 @@ $holiday_message = isset($ghana_holidays[$today]) ? $ghana_holidays[$today] : ""
 <div class="auth_box">
         <h2>Akwaaba, <?= $cashier_name ?>!</h2>
         <p><?= $greeting ?></p>
+        <p><strong>Motivational Quote of the Day:</strong> <?= $quote ?></p>
+
         <p><strong>Today's Date:</strong> <?= $current_date ?></p>
         <p><strong>Current Time (GMT):</strong> <?= $current_time ?></p>
         <?php if ($holiday_message): ?>

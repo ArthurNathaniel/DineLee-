@@ -1,15 +1,73 @@
 .receipt {
   width: 80mm;
-  margin: 0 auto;
-  margin-top: 50px;
+  /* margin: 0 auto; */
+  /* margin-top: 50px; */
   background-color: #fff;
+  padding: 5px;
+  border: 0.5px dashed #ddd;
 }
-
+.receipt p{
+  font-size: 14px;
+}
 table {
   margin-top: 0;
+  font-size: 14px;
 }
 
 .total-row {
   font-weight: bold;
   text-align: right;
+}
+
+
+.restaurant_info{
+  text-align: center;
+}
+
+.receipt .logo{
+  margin: auto;
+}
+
+.restaurant_info p{
+  font-size: 14px;
+  margin-top: 5px;
+}
+.receipt h2{
+  text-align: center;
+  padding-block: 10px;
+}
+
+.dashed{
+  border: 1px dashed #333;
+}
+.qr{
+display: flex;
+justify-content: center;
+align-items: center;
+margin-top: 10px;
+}
+.qr img{
+  width: 100px;
+  height: 100px;
+}
+
+.powred{
+  text-align: center;
+  margin-top: 5px;
+}
+
+.total-row{
+  text-align: center;
+  margin-top: 10px;
+}
+
+@media print {
+  button {
+      display: none;
+  }
+
+  .receipt {
+      box-shadow: none;
+      border: none;
+  }
 }

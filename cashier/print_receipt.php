@@ -35,18 +35,29 @@ while ($row = mysqli_fetch_assoc($result)) {
     <link rel="stylesheet" href="../css/base.css">     
     <link rel="stylesheet" href="../css/auth.css"> 
     <link rel="stylesheet" href="../css/print.css"> 
+    
 </head>  
 
 <body>     
     <div class="receipt"> 
-        <div class="logo"></div> 
-        <p><strong>Location:</strong></p>       
-        <h2>Order Receipt - Order ID: <?php echo $order['order_id']; ?></h2>         
+      <div class="restaurant_info">
+      <div class="logo"></div> 
+        <h3>TELL AFAR RESTAURANT</h3>
+        <p><strong>Location:</strong>Devtraco Courts Rd, Tema</p> 
+        <p><strong>Contact No: </strong></p> 
+      </div>  
+      <br>
+   
+      <div class="dashed"></div> 
+        <h2>RECEIPT</h2> 
+        <div class="dashed"></div> 
+        <br>          
         <p><strong>Cashier Name:</strong> <?php echo $order['cashier_name']; ?></p>         
         <p><strong>Order Date:</strong> <?php echo date('Y-m-d H:i', strtotime($order['order_date'])); ?></p>          
-
+        <p><strong>Payment Mode:</strong> <?php echo $order['payment_mode']; ?></p>    
+        <br>
         <div class="items">             
-            <strong>Food Items:</strong>             
+                   
             <table>                 
                 <thead>                     
                     <tr>                         
@@ -73,8 +84,21 @@ while ($row = mysqli_fetch_assoc($result)) {
             </table>         
         </div>          
 
-        <p class="total-row"><strong>Total Amount:</strong> <?php echo number_format($order['total_amount'], 2); ?></p>         
-        <p><strong>Payment Mode:</strong> <?php echo $order['payment_mode']; ?></p>         
+        <h3 class="total-row"><strong>Total Amount:</strong> 
+        <br>
+        <?php echo number_format($order['total_amount'], 2); ?></h3>         
+  <br>
+        <div class="dashed"></div>
+  <h2>   ORDER ID:<?php echo $order['order_id']; ?></h2>
+  <div class="dashed"></div>
+
+  <div class="qr">
+    <img src="../images/qrcode.png" alt="">
+    
+  </div>
+  <div class="powred">
+    <p>Powered by Nathstack Tech <br> +233 541 987 478</p>
+  </div>
         <div class="forms">             
             <button id="printButton">Print</button>         
         </div>     

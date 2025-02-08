@@ -34,16 +34,20 @@ if ($hour >= 5 && $hour < 12) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
-    <?php include '../cdn.php'?>
+    <?php include '../cdn.php'; ?>
     <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/auth.css">
 </head>
 <body>
 <?php include 'sidebar.php'?>
+<div class="auth_alls">
+<div class="auth_box">
     <h1><?php echo $greeting; ?></h1> <!-- Greet the admin -->
     <p>Today is <?php echo $current_date_time; ?></p> <!-- Show the current date and time -->
 
     <h3>Admin Dashboard</h3>
     <p>Manage your restaurant system from here.</p>
-    <!-- Add more features and links for the dashboard as needed -->
+</div>
+</div>
 </body>
 </html>

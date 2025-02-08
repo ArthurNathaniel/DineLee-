@@ -51,14 +51,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <form method="POST">
                 <div class="forms">
                     <label>Email/Phone:</label>
-                    <input type="text" name="identifier" required>
+                    <input type="text" placeholder="Enter your email or phone number" name="identifier" required>
                 </div>
 
                 <div class="forms">
                     <label>Password:</label>
-                    <input type="password" id="password" name="password" required>
+                    <input type="password" placeholder="Enter your password" id="password" name="password" required>
                 </div>
-
+<br>
                 <div class="form">
                     <input type="checkbox" onclick="togglePassword()"> Show Password
 

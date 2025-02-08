@@ -1,13 +1,12 @@
 <?php
-session_start();
-include 'db.php'; // Database connection
+session_start(); 
+include 'db.php'; // Include your database connection
 
-// Check if cashier is logged in
-if (!isset($_SESSION['cashier_id'])) {
-    header("Location: login.php");
+// Check if the admin is logged in
+if (!isset($_SESSION['admin_id'])) {
+    header('Location: login.php'); // Redirect to login page if not logged in
     exit;
 }
-
 // Query to fetch order details with both date and time of order_date
 $query = "
     SELECT 
@@ -84,7 +83,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                             <th>Food Items</th>
                             <th>Total Amount</th>
                             <th>Payment Mode</th>
-                            <th>Action</th>
+                            <!-- <th>Action</th> -->
                         </tr>
                     </thead>
                     <tbody>
@@ -102,7 +101,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                                 </td>
                                 <td><?php echo number_format($order['total_amount'], 2); ?></td>
                                 <td><?php echo $order['payment_mode']; ?></td>
-                                <td><button class="print-button" onclick="printReceipt(<?php echo $order_id; ?>)"><i class="fa-solid fa-print"></i></button></td>
+                                <!-- <td><button class="print-button" onclick="printReceipt(<?php echo $order_id; ?>)"><i class="fa-solid fa-print"></i></button></td> -->
                             </tr>
                         <?php } ?>
                     </tbody>

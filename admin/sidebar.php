@@ -18,6 +18,30 @@
         <a href="register_cashier.php">Register Cashier</a>
         <div class="dashed"></div>
         <a href="view_cashiers.php">View Cashiers</a>
+        <h4>ORDERS</h4>
+        <a href="view_orders.php">View Orders</a>
+        <div class="dashed"></div>
+        <a href="cancel_order.php">Cancel Orders</a>
+        <h4>SALES</h4>
+        <a href="todays_sales.php">Daily Sales</a>
+        <div class="dashed"></div>
+        <a href="weekly_sales.php">Weekly Sales</a>
+        <div class="dashed"></div>
+        <a href="monthly_sales.php">Monthly Sales</a>
+        <div class="dashed"></div>
+        <a href="yearly_sales.php">Yearly Sales</a>
+        <h4>EXPENSES</h4>
+        <a href="record_expenses.php">Record Expenses</a>
+        <div class="dashed"></div>
+        <a href="view_expenses.php">Expenses History</a>
+        <h4>PROFIT / LOSS</h4>
+        <a href="daily_earns.php">Daily Profit</a>
+        <div class="dashed"></div>
+        <a href="weekly_earns.php">Weekly Profit</a>
+        <div class="dashed"></div>
+        <a href="monthly_earns.php"> Monthly Profit</a>
+        <div class="dashed"></div>
+        <a href="yearly_earns.php">Yearly Profit</a>
     </div>
 
     <a href="logout.php">

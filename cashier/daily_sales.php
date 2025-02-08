@@ -1,6 +1,12 @@
 <?php
-// Include the database connection
-include('db.php');
+session_start();
+include 'db.php'; // Database connection
+
+// Check if cashier is logged in
+if (!isset($_SESSION['cashier_id'])) {
+    header("Location: login.php");
+    exit;
+}
 
 // Default to today if no date is provided
 $date_filter = isset($_POST['date']) ? mysqli_real_escape_string($conn, $_POST['date']) : date('Y-m-d');

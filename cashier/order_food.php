@@ -196,6 +196,9 @@ if (isset($_POST['submit_order'])) {
             })
             .catch(error => console.error('Error fetching search results:', error));
     }
+
+
+
 </script>
 
 </head>
@@ -237,8 +240,8 @@ if (isset($_POST['submit_order'])) {
     ?>
         <div class="food_card">
             <img src="../admin/uploads/<?= $food['food_image'] ?>" alt="<?= $food['food_name'] ?>" class="food-image">
-            <h3><?= $food['food_name'] ?></h3>
-            <p>Price: GHS <?= number_format($food['price'], 2) ?></p>
+            <h5><?= $food['food_name'] ?></h5>
+            <p>Price: GH₵ <?= number_format($food['price'], 2) ?></p>
             <form action="order_food.php" method="POST">
                 <input type="number" name="quantity" min="1" placeholder="Enter the Quantity" >
                 <input type="hidden" name="food_id" value="<?= $food['id'] ?>">
@@ -320,8 +323,8 @@ if (isset($_POST['submit_order'])) {
                 <div class="forms">
                     <label for="payment_mode">Select Payment Mode: </label>
                     <select name="payment_mode" id="payment_mode">
-                        <option value="" selected hidden>Select Payment Method</option>
-                        <option value="momo" <?= $payment_mode == 'momo' ? 'selected' : '' ?>>Mobile Money</option>
+                    <option value="" disabled selected>Select Payment Mode</option>
+                    <option value="momo" <?= $payment_mode == 'momo' ? 'selected' : '' ?>>Mobile Money</option>
                         <option value="cash" <?= $payment_mode == 'cash' ? 'selected' : '' ?>>Cash</option>
                         <option value="bank_transfer" <?= $payment_mode == 'bank_transfer' ? 'selected' : '' ?>>Bank Transfer</option>
                         <option value="other" <?= $payment_mode == 'other' ? 'selected' : '' ?>>Other</option>
