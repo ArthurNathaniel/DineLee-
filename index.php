@@ -17,10 +17,12 @@
     <?php include 'cdn.php'; ?>     
     <link rel="stylesheet" href="./css/base.css"> 
     <link rel="stylesheet" href="./css/index.css">
+
 </head>
 <body>
 
 <div class="index_all">
+
     <div class="index_text">
     <h1><strong>DineLee</strong> Is All Your Need For <br> Your <span>Restaurant</span></h1>
     <p>

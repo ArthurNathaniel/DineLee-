@@ -55,3 +55,27 @@
     width: 100%;
     object-fit: contain;
 }
+
+
+@media only screen and (max-width: 1110px) {
+    .index_text p{
+        padding: 0 10%;
+    }
+    .index_text h1{
+        font-size: 45px;
+    }
+ 
+}
+
+@media only screen and (max-width: 810px) {
+    .index_text p{
+        padding: 0 5%;
+    }
+    .index_text h1{
+        font-size: 35px;
+    }
+    .index_btn{
+        display: flex;
+        flex-direction: column;
+    }
+}

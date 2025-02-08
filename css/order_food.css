@@ -102,3 +102,31 @@
     color: #cc1827;
     width: 100%;
 }
+
+@media only screen and (max-width: 1130px) {
+    .food_menu{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media only screen and (max-width: 1110px) {
+    .food_menu{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media only screen and (max-width: 910px) {
+    .food_menu{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media only screen and (max-width: 510px) {
+    .food_menu{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}

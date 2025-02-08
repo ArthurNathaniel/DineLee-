@@ -274,7 +274,9 @@ if (isset($_POST['submit_order'])) {
             </form>
 
             <!-- Cart Display -->
-            <h3>Your Cart</h3>
+       <div class="forms">
+       <h3>Your Cart</h3>
+       </div>
             <table>
                 <thead>
                     <tr>
