@@ -98,7 +98,7 @@ mysqli_close($conn);
         var ctx1 = document.getElementById('foodChart').getContext('2d');
         var foodChart = new Chart(ctx1, {
             type: 'line',
-            type: 'bar',
+            // type: 'bar',
             data: {
                 labels: <?php echo json_encode($food_names); ?>,
                 datasets: [{

@@ -43,8 +43,8 @@ while ($row = mysqli_fetch_assoc($result)) {
       <div class="restaurant_info">
       <div class="logo"></div> 
         <h3>TELL AFAR RESTAURANT</h3>
-        <p><strong>Location:</strong>Devtraco Courts Rd, Tema</p> 
-        <p><strong>Contact No: </strong></p> 
+        <p><strong>Location:</strong> Devtraco Courts Rd, Tema</p> 
+        <p><strong>Contact No: </strong>+233 54 963 1625</p> 
       </div>  
       <br>
    

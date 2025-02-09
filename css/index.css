@@ -1,5 +1,4 @@
 .index_all{
-    border: 1px dashed #ddd;
     text-align: center;
     padding-block: 20px;
 }
@@ -56,6 +55,25 @@
     object-fit: contain;
 }
 
+.center_logo{
+    background-image: url(../images/logo.png);
+    width: 150px;
+    height: 150px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: auto;
+}
+
+.copyright{
+    padding-block: 15px;
+    text-align: center;
+    background-color: #fff;
+  }
+  
+  .copyright a{
+    color: #000;
+  }
 
 @media only screen and (max-width: 1110px) {
     .index_text p{
